@@ -12,9 +12,7 @@ return function (Container $container) {
     
     $router->get('/home', [HomeController::class, 'index'])
     ->get('/users', [UserController::class, 'index'])
-    ->get('/user', [UserController::class, 'sho']);
-    
-    
+    ->get('/user', [UserController::class, 'show']);
     
     return $router;
 };
