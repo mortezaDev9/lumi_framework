@@ -11,7 +11,9 @@ return function (Container $container) {
     $router = new Router($container);
     
     $router->get('/home', [HomeController::class, 'index'])
-    ->get('/users', [UserController::class, 'index']);
+    ->get('/users', [UserController::class, 'index'])
+    ->get('/user', [UserController::class, 'show']);
+    
     
     return $router;
 };
