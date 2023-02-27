@@ -10,10 +10,3 @@ if (! function_exists('view')) {
         return View::make($name, $data);
     }
 }
-
-if (! function_exists('public_path')) {
-    function public_path(string $name): string
-    {
-        return __DIR__ . '/../public/' . $name;
-    }
-}
