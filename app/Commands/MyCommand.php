@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class MyCommand extends Command
 {
     protected static $defaultName = 'app:my-command';
-    protected static $defaultDescription = 'My Command';
+    protected static $defaultDescription = 'Prints Hello CLI!';
     
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
