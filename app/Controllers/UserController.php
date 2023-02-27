@@ -20,9 +20,10 @@ class UserController
         return view('users.index', ['users' => $users]);
     }
     
-    
     public function show(): View
     {
         $user = User::findOrFail(1);
+        
+        return view('users.show', ['user' => $user]);
     }
 }

@@ -14,6 +14,5 @@ return function (Container $container) {
     ->get('/users', [UserController::class, 'index'])
     ->get('/user', [UserController::class, 'show']);
     
-    
     return $router;
 };
