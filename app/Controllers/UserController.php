@@ -11,8 +11,8 @@ use App\Repositories\UserRepo;
 class UserController
 {
     public function __construct(
-        private UserService $service,
         private UserRepo $repo,
+        private UserService $service,
     )
     {
     }
