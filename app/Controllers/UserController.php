@@ -30,4 +30,20 @@ class UserController
         
         return view('users.show', ['user' => $user]);
     }
+    
+    public function create(): View
+    {
+        return view('users.create');
+    }
+    
+    public function store(): View
+    {
+        $this->service->create([
+            'username' => $_POST['username'],
+            'email' => $_POST['email'],
+            'password' => $_POST['password']
+        ]);
+        
+        return view('index');
+    }
 }

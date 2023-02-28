@@ -9,10 +9,12 @@ use Illuminate\Database\Eloquent\Builder;
 
 class UserService implements UserServiceInterface
 {
-    public function create(array $data)
+    public function create(array $data): User
     {
         return $this->query()->create([
-            
+            'username' => $data['username'],
+            'email'    => $data['email'],
+            'password'    => $data['password'],
         ]);
     }
     
