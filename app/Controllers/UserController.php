@@ -24,9 +24,9 @@ class UserController
         return view('users.index', ['users' => $users]);
     }
     
-    public function show(): View
+    public function show(int $id): View
     {
-        $user = $this->repo->findById(1);
+        $user = $this->repo->findById($id);
         
         return view('users.show', ['user' => $user]);
     }
