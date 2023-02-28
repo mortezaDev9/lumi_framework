@@ -8,8 +8,8 @@ use App\Controllers\UserController;
 
 return function (Router $router) {
     $router->get('/home', [HomeController::class, 'index'])
-    ->get('/users', [UserController::class, 'index'])
-    ->get('/user', [UserController::class, 'show']);
+        ->get('/users', [UserController::class, 'index'])
+        ->get('/user/{id}', [UserController::class, 'show']);
     
     return $router;
 };
