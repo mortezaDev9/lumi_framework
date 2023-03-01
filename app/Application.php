@@ -55,7 +55,7 @@ class Application
         } catch (RouteNotFoundException $e) {
             http_response_code(404);
             
-            echo $e->getMessage();
+            echo view('errors.404');
         }
     }
 }
