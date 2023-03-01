@@ -40,7 +40,7 @@ class UserController
     {
         $this->service->create([
             'username' => $_POST['username'],
-            'email' => $_POST['email'],
+            'email'    => $_POST['email'],
             'password' => $_POST['password']
         ]);
         

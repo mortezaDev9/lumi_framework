@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
         
-        <link rel="stylesheet" href="../../css/sgin-in.css">
+        @yield('css')
     </head>
     <body>
         @yield('content')
         
-        <script src="../../js/sgin-in.js"></script>
+        @yield('js')
     </body>
 </html>
