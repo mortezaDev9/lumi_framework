@@ -1,4 +1,5 @@
 storage/cache
 vendor/
+.git/
 .env
 .phpunit.result.cache
