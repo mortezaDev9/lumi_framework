@@ -1,5 +1,4 @@
-storage/cache
-vendor/
-.git/
 .env
+vendor
+storage/cache/
 .phpunit.result.cache
