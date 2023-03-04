@@ -6,6 +6,9 @@ use App\Router;
 use App\Application;
 use Illuminate\Container\Container;
 
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../config/path_constants.php';
+
 $container = new Container();
 $router    = require_once __DIR__ . '/../routes/web.php';
 $router    = $router(new Router($container));
@@ -22,10 +25,6 @@ $app = new Application(
         'uri'    => $uri
     ]
 );
-
-if ($method !== null) {
-    $app->boot()->run();
-}
 
 $app->boot();
 
