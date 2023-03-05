@@ -5,28 +5,28 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\View;
-use App\Services\UserService;
-use App\Repositories\UserRepo;
+use App\Services\UserServiceInterface;
+use App\Repositories\UserRepositoryInterface;
 
 class UserController
 {
     public function __construct(
-        private UserRepo $repo,
-        private UserService $service,
+        private UserServiceInterface $service,
+        private UserRepositoryInterface $repository
     )
     {
     }
     
     public function index(): View
     {
-        $users = $this->repo->all();
+        $users = $this->repository->all();
         
         return view('users.index', ['users' => $users]);
     }
     
     public function show(int $id): View
     {
-        $user = $this->repo->findById($id);
+        $user = $this->repository->findById($id);
         
         return view('users.show', ['user' => $user]);
     }
@@ -41,7 +41,7 @@ class UserController
         $this->service->create([
             'username' => $_POST['username'],
             'email'    => $_POST['email'],
-            'password' => $_POST['password']
+            'password' => password_hash($_POST['password'], PASSWORD_BCRYPT, ['cost' => 12])
         ]);
         
         return view('index');

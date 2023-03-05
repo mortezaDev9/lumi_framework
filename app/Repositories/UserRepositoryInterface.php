@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
-interface UserRepoInterface
+interface UserRepositoryInterface
 {
     public function all(): Collection;
     

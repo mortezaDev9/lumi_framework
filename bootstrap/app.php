@@ -9,7 +9,7 @@ use Illuminate\Container\Container;
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../config/path_constants.php';
 
-$container = new Container();
+$container = require CONFIG_PATH . '/container/container.php';
 $router    = require_once __DIR__ . '/../routes/web.php';
 $router    = $router(new Router($container));
 
